@@ -8,6 +8,7 @@ import { Empleado } from './empleado.model';
 })
 export class AppComponent {
   title = 'Listado de Empleados';
+
   employees: Empleado[] = [
     new Empleado(
       'Nuna',
@@ -50,4 +51,5 @@ export class AppComponent {
   inputLastName: string = '';
   inputPosition: string = '';
   inputSalary: number = 0;
+
 }

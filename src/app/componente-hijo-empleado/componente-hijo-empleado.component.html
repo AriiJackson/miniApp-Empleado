@@ -5,8 +5,12 @@
           <label>{{ i + 1}}:</label><br/>
           <label>Empleado: {{ e.name }} {{ e.lastName }}</label><br/>
           <label>Cargo: {{ e.position }}</label><br/>
-          <label>Salario: {{ e.salary }}</label><br/><br/>
+          <label>Salario: {{ e.salary }}</label><br/>
         </div>
+        <app-componente-caracteristicas (newCaracteristica)="addCaracteristicas($event)"></app-componente-caracteristicas>
+        <ul>
+          <li *ngFor="let c of arrayCaracteristicas">{{ c }}</li>
+        </ul>
       </div>
     </div>
 </div>
