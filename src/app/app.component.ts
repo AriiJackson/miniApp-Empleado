@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { ServicioEmpleadoService } from './servicio-empleado.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,10 @@ import { Empleado } from './empleado.model';
 })
 export class AppComponent {
   title = 'Listado de Empleados';
+
+  constructor(private myService: ServicioEmpleadoService) {
+
+  }
 
   employees: Empleado[] = [
     new Empleado(
@@ -43,7 +48,7 @@ export class AppComponent {
       this.inputPosition,
       this.inputSalary
     );
-
+    this.myService.showMessage(`Nombre del empleado: ${employee.name}`);
     this.employees.push(employee);
   }
 
