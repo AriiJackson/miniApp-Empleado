@@ -26,15 +26,5 @@
   </form>
 </div>
 <br/><br/>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let e of employees; let i = index">
-        <label>{{ i + 1}}:</label><br/>
-        <label>Empleado: {{ e.name }} {{ e.lastName }}</label><br/>
-        <label>Cargo: {{ e.position }}</label><br/>
-        <label>Salario: {{ e.salary }}</label><br/><br/>
-      </div>
-    </div>
-  </div>
-</div>
+
+<app-componente-hijo-empleado *ngFor="let e of employees; let i = index" [e]="e" [i]="i"></app-componente-hijo-empleado>
