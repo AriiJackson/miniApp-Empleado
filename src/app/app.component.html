@@ -1,47 +1,18 @@
 <nav class="navbar navbar-expand-sm bg-light">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Proyectos</a>
+      <a class="nav-link" href="/proyects">Proyectos</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Nosotros</a>
+      <a class="nav-link" href="/us">Nosotros</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Contacto</a>
+      <a class="nav-link" href="/contact">Contacto</a>
     </li>
   </ul>
 </nav>
 
-<div class="container">
-  <div class="col">
-    <h1>{{ title }}</h1>
-  </div>
-  <br/>
-  <form class="form-group row">
-    <div class="form-group col-md-3">
-      <label for="name">Nombre</label>
-      <input type="text" name="name" id="name" placeholder="Nombre" class="form-control" [(ngModel)]="inputName">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="lastName">Apellido</label>
-      <input type="text" name="lastName" id="lastName" placeholder="Apellido" class="form-control" [(ngModel)]="inputLastName">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="position">Cargo</label>
-      <input type="text" name="position" id="postion" placeholder="Cargo" class="form-control" [(ngModel)]="inputPosition">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="salary">Salario</label>
-      <input type="number" name="salary" id="salary" placeholder="Salario" class="form-control" [(ngModel)]="inputSalary">
-    </div>
-    <div class="col">
-      <button type="submit" class="btn btn-primary" (click)="addEmployee()">Agregar</button>
-    </div>
-  </form>
-</div>
-<br/><br/>
-
-<app-componente-hijo-empleado *ngFor="let e of employees; let i = index" [e]="e" [i]="i"></app-componente-hijo-empleado>
+<router-outlet></router-outlet>
