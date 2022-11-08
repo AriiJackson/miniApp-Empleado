@@ -1,6 +1,12 @@
+import { Injectable } from "@angular/core";
 import { Empleado } from "./empleado.model";
+import { ServicioEmpleadoService } from "./servicio-empleado.service";
 
+@Injectable()
 export class EmpleadosService {
+  constructor(private serviceMessage: ServicioEmpleadoService) {
+  }
+
     employees: Empleado[] = [
         new Empleado(
           'Nuna',
@@ -29,6 +35,7 @@ export class EmpleadosService {
     ];
 
     addEmployeeService(employee: Empleado) {
-        this.employees.push(employee);
+      this.serviceMessage.showMessage(`Persona agregada: ${employee.name} \n Salario: ${employee.salary}`);
+      this.employees.push(employee);
     }
 }

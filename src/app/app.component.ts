@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
       this.inputPosition,
       this.inputSalary
     );
-    this.myService.showMessage(`Nombre del empleado: ${employee.name}`);
+    //this.myService.showMessage(`Nombre del empleado: ${employee.name}`);
     //this.employees.push(employee);
     this.employeeService.addEmployeeService(employee);
   }

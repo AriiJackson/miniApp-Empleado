@@ -10,13 +10,13 @@ export class ComponenteCaracteristicasComponent implements OnInit {
 
   @Output() newCaracteristica = new EventEmitter<string>();
 
-  constructor(private myService: ServicioEmpleadoService) { }
+  //constructor(private myService: ServicioEmpleadoService) { }
 
   ngOnInit(): void {
   }
 
   addCaracteristica(value: string) {
-    this.myService.showMessage(value);
+    //this.myService.showMessage(value);
     this.newCaracteristica.emit(value);
   }
 
