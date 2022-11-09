@@ -14,7 +14,12 @@ export class UpdateComponentComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private myService: ServicioEmpleadoService, private employeeService: EmpleadosService) {
   }
 
+  employees: Empleado[] = [];
+  action: number;
+
   ngOnInit(): void {
+    this.action = parseInt(this.route.snapshot.queryParams['action']);
+
     this.employees = this.employeeService.employees;
     this.index = this.route.snapshot.params['id'];
 
@@ -29,8 +34,6 @@ export class UpdateComponentComponent implements OnInit {
   backHome() {
     this.router.navigate(['']);
   }
-
-  employees: Empleado[] = [];
 
   updateEmployee() {
     let employee = new Empleado(
@@ -49,6 +52,23 @@ export class UpdateComponentComponent implements OnInit {
   deleteEmployee() {
     this.employeeService.deleteEmployee(this.index);
     this.router.navigate(['']);
+  }
+
+  actions() {
+    if (this.action == 1) {
+      let employee = new Empleado(
+        this.inputName,
+        this.inputLastName,
+        this.inputPosition,
+        this.inputSalary
+      );
+      this.employeeService.updateEmployeeService(this.index, employee);
+      this.router.navigate(['']);
+    }
+    else {
+      this.employeeService.deleteEmployee(this.index);
+      this.router.navigate(['']);
+    }
   }
 
   inputName: string = '';

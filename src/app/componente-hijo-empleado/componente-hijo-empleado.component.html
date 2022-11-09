@@ -2,11 +2,13 @@
     <div class="row">
       <div class="col">
         <div>
-          <a [routerLink]="['/update', i]"><label>{{ i + 1}}:</label></a><br/>
+          <label>{{ i + 1}}:</label><br/>
           <label>Empleado: {{ e.name }} {{ e.lastName }}</label><br/>
           <label>Cargo: {{ e.position }}</label><br/>
           <label>Salario: {{ e.salary }}</label><br/>
-          
+          <a [routerLink]="['/update', i]" [queryParams]="{action: '1'}">Actualizar</a>
+          &nbsp;
+          <a [routerLink]="['/update', i]" [queryParams]="{action: '2'}">Eliminar</a>
         </div>
         <app-componente-caracteristicas (newCaracteristica)="addCaracteristicas($event)"></app-componente-caracteristicas>
         <ul>

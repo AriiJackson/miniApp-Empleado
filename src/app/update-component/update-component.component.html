@@ -20,8 +20,12 @@
             <input type="number" name="salary" id="salary" placeholder="Salario" class="form-control" [(ngModel)]="inputSalary">
           </div>
           <div class="col">
+            <button *ngIf="action == 1" type="submit" class="btn btn-primary" (click)="actions()">Actualizar</button>
+            <button *ngIf="action == 2" type="submit" class="btn btn-primary" (click)="actions()">Eliminar</button>
+            <!--
             <button type="submit" class="btn btn-primary" (click)="updateEmployee()">Actualizar</button>
             <button type="submit" class="btn btn-primary" (click)="deleteEmployee()">Eliminar</button>
+            -->
           </div>
       </form>
     </div>
