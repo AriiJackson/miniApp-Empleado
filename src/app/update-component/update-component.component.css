@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    color: lightpink;
+}
+
+p {
+    margin: 5px;
+}
+
+.outForm {
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}

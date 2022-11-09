@@ -38,4 +38,17 @@ export class EmpleadosService {
       this.serviceMessage.showMessage(`Persona agregada: ${employee.name} \n Salario: ${employee.salary}`);
       this.employees.push(employee);
     }
+
+    findEmployee(index: number) {
+      let employee: Empleado = this.employees[index];
+      return employee;
+    }
+
+    updateEmployeeService(index: number, employee: Empleado) {
+      let updateEmployee = this.employees[index];
+      updateEmployee.name = employee.name;
+      updateEmployee.lastName = employee.lastName;
+      updateEmployee.position = employee.position;
+      updateEmployee.salary = employee.salary;
+    }
 }

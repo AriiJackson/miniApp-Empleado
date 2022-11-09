@@ -2,10 +2,11 @@
     <div class="row">
       <div class="col">
         <div>
-          <label>{{ i + 1}}:</label><br/>
+          <a [routerLink]="['/update', i]"><label>{{ i + 1}}:</label></a><br/>
           <label>Empleado: {{ e.name }} {{ e.lastName }}</label><br/>
           <label>Cargo: {{ e.position }}</label><br/>
           <label>Salario: {{ e.salary }}</label><br/>
+          
         </div>
         <app-componente-caracteristicas (newCaracteristica)="addCaracteristicas($event)"></app-componente-caracteristicas>
         <ul>
