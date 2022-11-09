@@ -13,6 +13,7 @@ import { UsComponentComponent } from './us-component/us-component.component';
 import { ContactComponentComponent } from './contact-component/contact-component.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateComponentComponent } from './update-component/update-component.component';
+import { ErrorComponentComponent } from './error-component/error-component.component';
 
 const appRoutes: Routes = [
   {
@@ -29,6 +30,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'update/:id', component: UpdateComponentComponent
+  },
+  {
+    path: '**', component: ErrorComponentComponent
   }
 ];
 
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
     ProyectsComponentComponent,
     UsComponentComponent,
     ContactComponentComponent,
-    UpdateComponentComponent
+    UpdateComponentComponent,
+    ErrorComponentComponent
   ],
   imports: [
     BrowserModule,
