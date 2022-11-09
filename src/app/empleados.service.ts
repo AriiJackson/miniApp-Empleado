@@ -51,4 +51,8 @@ export class EmpleadosService {
       updateEmployee.position = employee.position;
       updateEmployee.salary = employee.salary;
     }
+
+    deleteEmployee(index: number) {
+      this.employees.splice(index, 1);
+    }
 }

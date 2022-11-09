@@ -46,6 +46,11 @@ export class UpdateComponentComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  deleteEmployee() {
+    this.employeeService.deleteEmployee(this.index);
+    this.router.navigate(['']);
+  }
+
   inputName: string = '';
   inputLastName: string = '';
   inputPosition: string = '';
